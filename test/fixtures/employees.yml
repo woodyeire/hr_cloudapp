@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  empcode: 1
+  f_name: MyString
+  l_name: MyString
+  address: MyString
+  phone: MyString
+  email: MyString
+  sex: MyString
+  dob: 2015-07-31
+  start_date: 2015-07-31
+  dept: MyString
+  role: MyString
+  salary: MyString
+  manager: MyString
+  notes: MyText
+
+two:
+  empcode: 1
+  f_name: MyString
+  l_name: MyString
+  address: MyString
+  phone: MyString
+  email: MyString
+  sex: MyString
+  dob: 2015-07-31
+  start_date: 2015-07-31
+  dept: MyString
+  role: MyString
+  salary: MyString
+  manager: MyString
+  notes: MyText
