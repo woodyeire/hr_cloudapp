@@ -2,9 +2,17 @@ class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
   # GET /employees
   # GET /employees.json
+  
+  before_filter :authenticate_user!
+  ## if you want spesific action for require authentication
+  ## before_filter :authenticate_user!, :only => [:action1, :action2]
+end
+
+
   def index
     @employees = Employee.all
   end
+  
 
   # GET /employees/1
   # GET /employees/1.json
@@ -70,4 +78,3 @@ class EmployeesController < ApplicationController
     def employee_params
       params.require(:employee).permit(:empcode, :f_name, :l_name, :address, :phone, :email, :sex, :dob, :start_date, :dept, :role, :salary, :manager, :notes)
     end
-end

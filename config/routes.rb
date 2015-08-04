@@ -2,14 +2,28 @@ Rails.application.routes.draw do
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :employees, :users
+  resources :employees, :users, :admin_users
+  
 
-  
-  
-  root to: "employees#index"
-  
-  
-  
+#  root to: 'admin/users#show'
+#  root to: '/profile'
+
+  root to: 'users#show'
+
+
+  devise_scope :user do
+    get '/sign-in' => "devise/sessions#new", :as => :login
+    get '/users/:id' => "users#show", :as => :profile
+    get '/users/:id/edit' => "users#edit", :as => :edit
+#    get '/profile' => "admin/users#show", :as => :profile
+  end
+
+
+  # devise_scope :user do
+  #  get '/profile' => "admin/users#show", :as => :profile
+  # end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
