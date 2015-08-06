@@ -39,30 +39,19 @@
     <%= f.label :dob, "Date of birth" %><br>
     <%= f.date_select :dob %>
   </div>
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :dept, "Department" %><br>
-    <%= f.text_field :dept %>
-  </div>
-  <div class="field">
-    <%= f.label :role %><br>
-    <%= f.text_field :role %>
-  </div>
-  <div class="field">
-    <%= f.label :salary %><br>
-    <%= f.text_field :salary %>
-  </div>
-  <div class="field">
-    <%= f.label :manager %><br>
-    <%= f.text_field :manager %>
-  </div>
+
   <div class="field">
     <%= f.label :notes %><br>
     <%= f.text_area :notes %>
   </div>
+  
+  <!-- not fully functioning yet -->
+  <div class="field">
+    <%= f.label :cv, "Resume" %><br>
+    <%= f.file_field :document %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

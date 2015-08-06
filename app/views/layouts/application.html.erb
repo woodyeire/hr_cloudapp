@@ -9,10 +9,12 @@
 <body>
  <div id='header'>
  <!-- Header Image Displayes here -->
+ <div id='logo'>
+<strong>HR CloudApp</strong></div>
  <p class="navbar-text pull-right">
 <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit Employee Profile', edit_path(@user), :class => 'navbar-link' %> |
+  Welcome <strong><%= current_user.employee_name %></strong>.
+  <%= link_to 'Edit Employee Profile', edit_path(current_user), :class => 'navbar-link' %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 <% else %>
 
@@ -21,8 +23,13 @@
  <div id='menu'>
  <div id="navbar">
 <ul>
-<li><a href="/admin/dashboard">Administrators</a></li>
+<li><a href="/admin/dashboard">Administration</a></li>
+<% if user_signed_in? %>
 <li><%= link_to "Employee Profile", current_user %></li>
+<li><%= link_to "Leave Requests", leaverequest_path %></li>
+<% else %>
+<li><%= link_to "Login", login_path %></li>
+<% end %>
 </ul>
  </div>
  </div>

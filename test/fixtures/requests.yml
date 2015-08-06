@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee_name: MyString
+  date_begin: 2015-08-04
+  date_end: 2015-08-04
+  leave_type: MyString
+
+two:
+  employee_name: MyString
+  date_begin: 2015-08-04
+  date_end: 2015-08-04
+  leave_type: MyString

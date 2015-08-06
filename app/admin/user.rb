@@ -11,6 +11,11 @@ ActiveAdmin.register User do
     actions
   end
 
+  filter :f_name
+  filter :l_name
+  filter :dept
+  filter :sex
+  filter :salary
   filter :email
   filter :current_sign_in_at
   filter :sign_in_count
@@ -26,6 +31,7 @@ ActiveAdmin.register User do
       f.input :address
       f.input :phone
       f.input :sex
+#      f.select :sex, [['Male', 'male'],['Female', 'female']]
       f.input :start_date
       f.input :dept
       f.input :role

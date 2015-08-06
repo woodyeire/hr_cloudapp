@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  resources :requests
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :employees, :users, :admin_users
+  resources :employees, :users, :admin_users, :leave_requests
   
 
 #  root to: 'admin/users#show'
@@ -11,10 +12,12 @@ Rails.application.routes.draw do
   root to: 'users#show'
 
 
+
   devise_scope :user do
     get '/sign-in' => "devise/sessions#new", :as => :login
     get '/users/:id' => "users#show", :as => :profile
     get '/users/:id/edit' => "users#edit", :as => :edit
+    get '/requests/new' => "requests#new", :as => :leaverequest
 #    get '/profile' => "admin/users#show", :as => :profile
   end
 

@@ -9,11 +9,13 @@ class ApplicationController < ActionController::Base
   params[resource] &&= send(method) if respond_to?(method, true)
 end
 
+
+
   def authenticate_user!
     if user_signed_in?
       super
     else
-      redirect_to login_path, :notice => 'You must sign in to continue.'
+      redirect_to login_path, :notice => 'You are not signed in!'
       ## if you want render 404 page
       ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
     end

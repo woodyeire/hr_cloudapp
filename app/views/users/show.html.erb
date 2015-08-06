@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-
+<div id="profile">
 <p>
   <strong>First name:</strong>
   <%= @user.f_name %>
@@ -60,7 +59,12 @@
   <%= @user.notes %>
 </p>
 
+<p>
+  <strong>Active Requests:</strong>
+  <%= @show_requests %>
+</p>
 
 
 
 <%= link_to 'Edit Employee Profile', edit_path(@user) %> |
+</div>
