@@ -6,9 +6,19 @@ class UsersController < ApplicationController
     @users = User.all
   end
   
+
   def show
     @user = current_user
+    if @user 
+      @request = @user.requests.all
+      render action: :show
+    end
   end
+    
+#    @request = Request.find(current_user.user_id)
+#    @request = Request.find(@user.user_id)
+#    end
+
   
   
   def new
@@ -44,7 +54,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:f_name, :email, :password,
-                                   :password_confirmation, :l_name, :address, :phone, :sex, :start_date, :dept, :role, :salary, :manager, :notes)
+                                   :password_confirmation, :l_name, :address, :phone, :sex, :start_date, :dept, :role, :salary, :manager, :notes, :id, :user_id)
     end
 
 end

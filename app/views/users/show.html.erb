@@ -1,4 +1,7 @@
 <div id="profile">
+  
+  
+
 <p>
   <strong>First name:</strong>
   <%= @user.f_name %>
@@ -60,11 +63,40 @@
 </p>
 
 <p>
-  <strong>Active Requests:</strong>
-  <%= @show_requests %>
-</p>
+  <strong>Active Leave Requests:</strong><br>
+
+  <% @request.each do |request| %>
+<table style="width:100%">
+  <tr>
+    
+<td>
+  <strong>Employee Name:</strong></td>
+<td>
+  <strong>Date Commencing:</strong></td>
+<td>
+  <strong>Date Ending:</strong></td>
+<td>
+  <strong>Leave Type:</strong></td>
+  </tr>
+  
+  <tr>
+  <td>
+  <%= request.employee_name %></td>
+
+  <td>
+  <%= request.date_begin %></td>
+  
+  <td>
+  <%= request.date_end %></td>
+  
+  <td>
+  <%= request.leave_type %></td>
+  </tr>
+  </table>
+    <% end %>
+
+<br>
 
 
-
-<%= link_to 'Edit Employee Profile', edit_path(@user) %> |
+<%= link_to 'Edit Employee Profile', edit_path(@user) %>
 </div>

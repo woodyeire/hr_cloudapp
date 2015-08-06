@@ -9,7 +9,9 @@ class ApplicationController < ActionController::Base
   params[resource] &&= send(method) if respond_to?(method, true)
 end
 
-
+  def employee_name
+    f_name + " " + l_name
+  end
 
   def authenticate_user!
     if user_signed_in?

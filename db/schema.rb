@@ -46,24 +46,6 @@ ActiveRecord::Schema.define(version: 20150804143219) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
-  create_table "employees", force: :cascade do |t|
-    t.string   "f_name"
-    t.string   "l_name"
-    t.string   "address"
-    t.string   "phone"
-    t.string   "email"
-    t.string   "sex"
-    t.date     "dob"
-    t.date     "start_date"
-    t.string   "dept"
-    t.string   "role"
-    t.string   "salary"
-    t.string   "manager"
-    t.text     "notes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "leaves", force: :cascade do |t|
     t.string   "employee_name"
     t.integer  "employee_id"
@@ -75,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150804143219) do
   end
 
   create_table "requests", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "employee_name"
     t.date     "date_begin"
     t.date     "date_end"
