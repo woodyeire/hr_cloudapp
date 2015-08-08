@@ -34,6 +34,13 @@
     <%= f.label :leave_type %><br>
     <%= f.select :leave_type, [['Annual Leave', 'annual leave'],['Sick Leave', 'sick leave'],['Force Majeure', 'force majeure'],['Study Leave', 'study leave'],['Maternity Leave', 'maternity leave']] %>
   </div>
+  
+
+    <%= f.hidden_field :status, required: true, class: 'form-control', value:"Pending", include_blank: false, :readonly => true %>
+
+  
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>

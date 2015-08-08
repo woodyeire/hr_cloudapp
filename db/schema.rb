@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20150804143219) do
     t.date     "date_begin"
     t.date     "date_end"
     t.string   "leave_type"
+    t.string   "status"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

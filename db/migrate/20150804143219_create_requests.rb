@@ -6,6 +6,7 @@ class CreateRequests < ActiveRecord::Migration
       t.date :date_begin
       t.date :date_end
       t.string :leave_type
+      t.string :status
       t.timestamps null: false
     end
 

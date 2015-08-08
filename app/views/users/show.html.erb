@@ -1,6 +1,6 @@
 <div id="profile">
   
-  
+<h1>Employee Profile</h1>
 
 <p>
   <strong>First name:</strong>
@@ -63,9 +63,10 @@
 </p>
 
 <p>
-  <strong>Active Leave Requests:</strong><br>
+  <strong><h3>Active Leave Requests:</h3></strong><br>
 
   <% @request.each do |request| %>
+  <% if request.status == "Pending" %>
 <table style="width:100%">
   <tr>
     
@@ -77,6 +78,8 @@
   <strong>Date Ending:</strong></td>
 <td>
   <strong>Leave Type:</strong></td>
+<td>
+  <strong>Status:</strong></td>
   </tr>
   
   <tr>
@@ -91,9 +94,53 @@
   
   <td>
   <%= request.leave_type %></td>
+  
+  <td>
+  <%= request.status %></td>
   </tr>
   </table>
     <% end %>
+    <% end %>
+<br>
+<p>
+  <strong><h3>Closed Leave Requests:</h3></strong><br>
+  <br>
+  <% @request.each do |request| %>
+  <% if request.status != "Pending" %>
+<table style="width:100%">
+  <tr>
+    
+<td>
+  <strong>Employee Name:</strong></td>
+<td>
+  <strong>Date Commencing:</strong></td>
+<td>
+  <strong>Date Ending:</strong></td>
+<td>
+  <strong>Leave Type:</strong></td>
+<td>
+  <strong>Status:</strong></td>
+  </tr>
+  
+  <tr>
+  <td>
+  <%= request.employee_name %></td>
+
+  <td>
+  <%= request.date_begin %></td>
+  
+  <td>
+  <%= request.date_end %></td>
+  
+  <td>
+  <%= request.leave_type %></td>
+  
+  <td>
+  <%= request.status %></td>
+  </tr>
+  </table>
+    <% end %>
+  <% end %>
 
 <br>
 

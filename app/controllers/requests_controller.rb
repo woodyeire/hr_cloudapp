@@ -6,7 +6,7 @@ class RequestsController < InheritedResources::Base
     end
 
     def request_params
-      params.require(:request).permit(:employee_name, :date_begin, :date_end, :leave_type, :user_id, :id)
+      params.require(:request).permit(:employee_name, :date_begin, :date_end, :leave_type, :user_id, :id, :status)
     end
     
 end
