@@ -7,6 +7,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
+  def http_protocol 
+  if website.present?
+    self.website = "http://#{self.website}" unless website[/\Ahttps?:\/\//]
+  end
+  end       
+         
+         
   def employee_name
     f_name + " " + l_name
   end
