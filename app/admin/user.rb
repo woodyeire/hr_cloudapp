@@ -1,6 +1,9 @@
 ActiveAdmin.register User do
   permit_params :email, :password, :password_confirmation, :id_column, :f_name, :l_name, :address, :phone, :sex, :start_date, :dept, :role, :salary, :manager, :notes
 
+# The following index section defines what is displayed in the admin console under the Users section.
+# This section is directly linked with the standard Devise User database, allowing users/employees to be created directly from the Admin Console.
+
   index do
     selectable_column
     id_column

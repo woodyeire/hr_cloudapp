@@ -9,9 +9,14 @@ class ApplicationController < ActionController::Base
   params[resource] &&= send(method) if respond_to?(method, true)
 end
 
+# Defining a variable which allows us to call the users full name.
+
   def employee_name
     f_name + " " + l_name
   end
+
+# The below statement is ensuring that if the user is NOT logged in, no matter where in the application it will reroute to the login page.
+# If they are logged in, it will default to the routes.rb file and the root to: that is set in there.
 
   def authenticate_user!
     if user_signed_in?

@@ -1,6 +1,8 @@
 ActiveAdmin.register Request do
   permit_params :user_id, :employee_name, :date_begin, :date_end, :leave_type, :status
 
+# The following index section defines what is displayed in the admin console under the Requests section.
+
   index do
     selectable_column
     id_column
@@ -10,6 +12,8 @@ ActiveAdmin.register Request do
     column :status
     actions
   end
+  
+# The below "Filter" statements will define what criteria can be used to search and filter requests from the admin console.
 
   filter :employee_name
   filter :date_begin
@@ -17,6 +21,9 @@ ActiveAdmin.register Request do
   filter :leave_type
   filter :user_id
   filter :status
+
+# The below form sets out what details will be available in the Admin console forms for setting up and editing a request.
+# I have restricted this in such a way that only Admin users from the Admin Console can approve or reject these requests from this form.
 
   form do |f|
     f.inputs "Leave Request Details" do
