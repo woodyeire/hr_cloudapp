@@ -64,6 +64,13 @@ div#logo {
 	font-size: 70px;
 	
 }
+
+div#student {
+    
+    float: left;
+    color: white;
+    
+}
 div#menu {
     border-bottom: none;
     height: 28px;
