@@ -23,7 +23,6 @@ end
       super
     else
       redirect_to login_path, :notice => 'You are not signed in!'
-      ## if you want render 404 page
       ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
     end
   end
