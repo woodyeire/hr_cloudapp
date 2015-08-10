@@ -10,7 +10,8 @@
       </ul>
     </div>
   <% end %>
-
+  <!-- The below fields, "Employee ID" and "Employee Name" are configured to automatically pull in the required info from the logged in user.
+        They are also set to read only so that the user can not change them or submit requests on behalf of another. -->
   <div class="field">
     <%= f.label :user_id, "Employee ID" %><br>
     <%= f.text_field :user_id, required: true, class: 'form-control', value:current_user.user_id, :readonly => true %>
@@ -35,7 +36,8 @@
     <%= f.select :leave_type, [['Annual Leave', 'annual leave'],['Sick Leave', 'sick leave'],['Force Majeure', 'force majeure'],['Study Leave', 'study leave'],['Maternity Leave', 'maternity leave']] %>
   </div>
   
-
+<!-- The below hidden field is set up to set the status of the Leave Reqeust to "Pending" by default. 
+This can only be changed by an admin user in the admin console. -->
     <%= f.hidden_field :status, required: true, class: 'form-control', value:"Pending", include_blank: false, :readonly => true %>
 
   

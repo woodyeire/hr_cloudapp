@@ -62,6 +62,9 @@
   <%= @user.notes %>
 </p>
 
+<!-- The below section is set up to display any Active Leave requests that the user currently has.
+This is determined depending on the Request Status being set to "Pending". -->
+
 <p>
   <strong><h3>Active Leave Requests:</h3></strong><br>
 
@@ -102,6 +105,8 @@
     <% end %>
     <% end %>
 <br>
+
+<!-- If the status of the request is anything other than "Pending" it will go into the Closed Requests section. -->
 <p>
   <strong><h3>Closed Leave Requests:</h3></strong><br>
   <br>

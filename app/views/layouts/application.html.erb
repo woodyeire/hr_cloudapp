@@ -12,6 +12,7 @@
  <div id='logo'>
 <strong>HR CloudApp</strong></div>
  <p class="navbar-text pull-right">
+
 <% if user_signed_in? %>
   Welcome <strong><%= current_user.employee_name %></strong>.
   <%= link_to 'Edit Employee Profile', edit_path(current_user), :class => 'navbar-link' %> |
@@ -23,6 +24,8 @@
  <div id='menu'>
  <div id="navbar">
 <ul>
+<!-- I have configured the navbar below to display only the Login option and a link to the Admin console if the user is not signed in. 
+ When the user is signed in, the option to see Leave Requests etc. becomes visible. -->
 <li><a href="/admin/dashboard">Administration</a></li>
 <% if user_signed_in? %>
 <li><%= link_to "Employee Profile", current_user %></li>

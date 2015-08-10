@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 #  root to: 'admin/users#show'
 #  root to: '/profile'
 
+# This defaults the web app to the currently logged in users profile IF authenticated.
   root to: 'users#show'
 
 
